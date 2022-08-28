@@ -1,10 +1,13 @@
 add_rules("mode.debug", "mode.release")
 
+add_requires("luajit")
+
 target("forg")
 	set_kind("binary")
 	add_files("src/*.c")
+	add_packages("luajit")
 	add_includedirs("/usr/include/luajit-2.1/", "/usr/include", "/usr/local/include", "include")
-	add_linkdirs("/usr/local/lib", "/usr/lib", "/usr/lib/x86_64-linux-gnu")
+	add_linkdirs("/usr/local/lib", "/usr/lib", "/usr/lib/x86_64-linux-gnu", "/usr/lib/lua/5.1/")
 	add_links("lua", "m", "dl")
 	set_languages("c2x")
 	set_optimize("fastest")
