@@ -1,4 +1,7 @@
 --target=x86_64-pc-linux-gnu
 -std=gnu2x
+-llua
 -I/usr/include/luajit-2.1/
--I./lib/
+-I./include/
+-lm
+-ldl
